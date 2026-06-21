@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ADS Booth</title>
+<link rel="stylesheet" href="src/style.css" />
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header>
+    <a href="https://www.neurald.ai/en" target="_blank" rel="noopener" class="neurald-logo-link">
+      <img src="src/image/neural_d_logo_white.png" alt="Neural D" class="neurald-logo" />
+    </a>
+    <img src="src/image/ads_logo_white.png" alt="ADS" class="logo" />
+  </header>
+
+  <main>
+    <div class="tabs">
+      <button class="tab-button active" data-tab="video">Video</button>
+      <button class="tab-button" data-tab="model">3D Model</button>
+    </div>
+
+    <section class="panel tab-panel active" id="tab-video">
+      <video controls width="100%" crossorigin="anonymous">
+        <source src="src/video/ads-intro.mp4" type="video/mp4" />
+        <track label="English" kind="subtitles" srclang="en" src="src/video/ads-intro.vtt" default />
+      </video>
+    </section>
+
+    <section class="panel tab-panel" id="tab-model">
+      <div class="model-wrapper">
+        <model-viewer
+          id="model-viewer"
+          src="src/model/ads_3d_model.glb"
+          ios-src="src/model/ads_3d_model.usdz"
+          alt="ADS 3D Model"
+          camera-controls
+          auto-rotate
+          ar
+          shadow-intensity="1"
+          class="model-viewer"
+          style="background-color: #000000;">
+        </model-viewer>
+        <button id="fullscreen-button" class="fullscreen-button" aria-label="Fullscreen">⛶</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="src/main.js"></script>
+</body>
+</html>
