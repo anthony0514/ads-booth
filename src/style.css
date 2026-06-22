@@ -28,7 +28,9 @@ header {
 }
 
 header .logo {
-  height: 32px;
+  /* 모바일: 24px */
+  height: 24px;
+  transition: height 0.3s ease;
 }
 
 .neurald-logo-link {
@@ -41,8 +43,9 @@ header .logo {
 }
 
 .neurald-logo {
-  height: 28px;
-  transition: opacity 0.2s ease;
+  /* 모바일: 20px */
+  height: 20px;
+  transition: height 0.3s ease;
 }
 
 .neurald-logo-link:hover .neurald-logo {
@@ -149,4 +152,26 @@ model-viewer {
 
 .fullscreen-button:hover {
   background: rgba(0, 0, 0, 0.8);
+}
+
+/* 태블릿 환경 (768px 이상) */
+@media (min-width: 768px) {
+  header .logo {
+    height: 32px;
+  }
+
+  .neurald-logo {
+    height: 28px;
+  }
+}
+
+/* PC 환경 (1024px 이상) */
+@media (min-width: 1024px) {
+  header .logo {
+    height: 40px;
+  }
+
+  .neurald-logo {
+    height: 36px;
+  }
 }
